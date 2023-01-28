@@ -6,6 +6,8 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import accuracy_score
 import sys
+import pickle
+
 
 def train_test_split(train,test):
     X_train = train.iloc[:,1:]
@@ -26,6 +28,9 @@ def classfy(train,test):
     print('accuracy_score',accuracy_score(y_test, y_predknn))
     print('r2_score', r2_score(y_test, y_predknn))
     print('mean_squared_error', mean_squared_error(y_test, y_predknn))
+
+    with open('save/neigh.pickle', 'wb+') as f:
+        pickle.dump(neigh, f)
 
 if __name__ == '__main__':
     classfy(sys.argv[1],sys.argv[2])
