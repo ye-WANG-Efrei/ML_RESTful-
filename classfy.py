@@ -28,9 +28,12 @@ def classfy(train,test):
     print('accuracy_score',accuracy_score(y_test, y_predknn))
     print('r2_score', r2_score(y_test, y_predknn))
     print('mean_squared_error', mean_squared_error(y_test, y_predknn))
+    print('Mean_accuracy',neigh.score(X_train,y_train))
 
-    with open('save/neigh.pickle', 'wb+') as f:
+    with open('save/neigh.sav', 'wb+') as f:
         pickle.dump(neigh, f)
+
+    return y_predknn
 
 if __name__ == '__main__':
     classfy(sys.argv[1],sys.argv[2])
