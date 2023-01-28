@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Testing') {
             steps {
-              bat 'python classfy.py'
+              bat 'python classfy.py mlflowe/fashion-mnist-train-1.csv mlflowe/fashion-mnist_test.csv'
             }
         }
         stage('Build_docker_image'){
