@@ -25,12 +25,12 @@ pipeline {
         }
         stage('Testing') {
             steps {
-              bat 'python Archive/test_main.py '
+              bat 'python classfy.py'
             }
         }
         stage('Build_docker_image'){
             steps {
-              bat 'docker build -t jenkins:latest Archive/'
+              bat 'docker build -t jenkins:latest .'
             }
         }
         stage('Running'){
