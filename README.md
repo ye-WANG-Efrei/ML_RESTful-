@@ -6,6 +6,8 @@ run the code:
     python app.py
 
 the app runs on http://127.0.0.1:5000
+
+
 the resualt of predict runs on http://127.0.0.1:5000/api/classify
 
 test the app:
